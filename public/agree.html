@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
+    <meta name="author" content="Кулагин Александр">
+	<meta name="copyright" content="MyOcean">
+	<meta name="keywords" content="Star Wars, Mandalorec, Мандалорец, Episode IX, Скайуокер. Восход, Звездные войны">
+	<meta name="description" content="Данный сайт содержит информацию о вселенной Звёздных войн.">
+    <!-- FACEBOOK -->
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Star Wars">
+	<meta property="og:description" content="Сайт содержит информацию о вселенной Звездный Войн">
+	<meta property="og:image" content="img/logo.png">
+	<meta property="og:url" content="ПОКАЧТО ЕЕ НЕТ">
+	<meta property="og:site_name" content="Star Wars">
+	<!-- TWITTER -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="Iframe">
+	<meta name="twitter:title" content="Star Wars">
+	<meta name="twitter:description" content="Сайт содержит информацию о вселенной Звездный Войн">
+	<meta name="twitter:image" content="img/logo.png">
+    <title>Условия соглашения</title>
+    <style>
+        body {
+            background: url('img/fone.webp') 50%/cover no-repeat;
+            max-height: 100vh;
+            background-color: rgb(48, 48, 48);
+            letter-spacing: 2px;
+        }
+            
+
+        img, button, video {
+            user-select: none;
+            cursor: pointer;
+        }
+
+        .image {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            cursor: pointer;
+        }
+
+        .infoContent {
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .infoContent h1 {
+            color: #fff;
+            font-family: 'Fira Sans', Verdana;
+            display: flex;
+            justify-content: center;
+            margin-top: 60px;
+            margin-left: 500px;
+        }
+
+        .infoContent span {
+            color: rgb(187, 175, 15);
+        }
+
+        .canvas {
+            cursor: none;
+            background: url('img/spaceship.webp') 50%/cover no-repeat;
+            background-color: #fff;
+            margin-left: 100px;
+            border: 3px solid rgb(58, 58, 58);
+        }
+
+        .aside {
+            margin-top: 130px;
+            height: 450px;
+        }
+
+        .aside__row {
+            margin: 0 auto;
+            width: 1170px;
+        }
+
+        .aside__title h1 {
+            color: #fff;
+            font-family: 'Fira Sans', Verdana;
+            text-align: center;
+        }
+
+        .card {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            width: 33%;
+            height: 360px;
+            border: 2px solid #fff;
+            margin-left: 20px;
+            cursor: pointer;
+            background-color: rgb(31, 31, 31);
+            transition: .3s ease-in-out;
+        }
+
+        .card:hover {
+            border-color: rgb(243, 225, 60);
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .card__title {
+            margin-bottom: 50px;
+            color: #fff;
+            font-family: 'Fira Sans', Verdana;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .timer {
+            font-family: 'Fira Sans', Verdana;
+            color: #fff;
+            margin-left: 30px;
+            font-size: 32px;
+            font-weight: bold;
+            user-select: none;
+            padding: 0 20px;
+            background-color: rgba(127, 194, 72, 0.589);
+            border: 3px solid rgba(127, 194, 72, 0.589);
+        }
+
+        .heltpoint {
+            cursor: pointer;
+            color: #fff;
+            font-weight: bold;
+            margin-left: 60px;
+            font-size: 38px;
+            margin-top: 30px;
+        }
+
+        .card__text {
+            cursor: pointer;
+            text-align: center;
+            font-weight: bold;
+            color: #fff;
+            margin: 30px 0;
+            font-size: 24px;
+            color: rgb(45, 157, 221);
+            transition: .3s ease-in;
+            font-family: 'Fira Sans', Verdana;
+        }
+
+        .card__text:hover {
+            color: rgb(85, 193, 255);
+        }
+
+        .volume {
+            cursor: pointer;
+            position: absolute;
+            left: 350px;
+            width: 64px;
+            height: 64px;
+        }
+
+        .volumeOn {
+            background: url('img/on.png') no-repeat;
+        }
+
+        .volumeOff {
+            background: url('img/off.png') no-repeat;
+        }
+
+        .hide {
+            transform: translateY(-100%);
+        }
+
+        .header {
+            transition: .4s;
+        }
+
+        .menu {
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 130px;
+            width: 110px;
+            height: 128px;
+            background-color: rgb(4, 93, 194);
+            transition: .2s ease-in-out;
+        }
+
+        .menu:hover {
+            background-color: rgb(31, 119, 219);
+        }
+
+        .menu span {
+            user-select: none;
+            height: 128px;
+            font-size: 64px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="image" target="_blank"><img src="img/logo1.webp"></a>
+        <div class="info">
+            <div class="infoContent">
+                <h1 class="agree" style="white-space: nowrap;">Условий соглашения нет<span>:D</span></h1>
+                <div class="heltpoint">200</div>
+                <img src="img/hearth.png" style="height:64px;width:64px;margin-top:30px;margin-left:30px;">
+            </div>
+        </div>
+    </div>
+    <canvas class="canvas" width="1280" height="600"></canvas>
+    <div class="menu" title="Открыть панель"><span>☰</span></div>
+    <aside class="aside">
+        <div class="aside__row">
+            <div class="aside__title">
+                <img src="img/move.jpg" style="margin-left: 120px;">
+                <h1 class="title">Выберите, кем вы хотите играть</h1>
+            </div>
+            <div>
+                <div class="cards">
+                    <div class="card onePlayer">
+                        <div class="card__title">Сокол Тысячелетия</div>
+                        <div class="card__image"><img style="width: 150px; height:128px"; src="img/sokol.webp"></div>
+                    </div>
+                    <div class="card twoPlayer">
+                        <div class="card__title">Истребитель X-wing T-65</div>
+                        <div class="card__image"><img style="width: 150px; height:128px" src="img/X-wing.webp"></div>
+                    </div>
+                    <div class="card threePlayer">
+                        <div class="card__title">Истребитель Y-wing</div>
+                        <div class="card__image"><img style="width: 150px; height:128px" src="img/Y-wing.webp"></div>
+                    </div>
+                </div>
+                <div class="cards" style="margin-top: 50px;">
+                    <div class="card fourPlayer">
+                        <div class="card__title">Истребитель Z-95</div>
+                        <div class="card__image"><img style="width: 150px; height:128px" src="img/z-95.webp"></div>
+                    </div>
+                    <div class="card fivePlayer">
+                        <div class="card__title">Истребитель B-wing</div>
+                        <div class="card__image"><img style="width: 150px; height: 128px;" src="img/b.webp"></div>
+                    </div>
+                    <div class="card sixPlayer">
+                        <div class="card__title">Истребитель T-70</div>
+                        <div class="card__image"><img style="width: 150px; height:128px" src="img/T-70.webp"></div>
+                    </div>
+                </div>
+                <div class="cards" style="margin-top: 50px;">
+                    <div class="card sevenPlayer">
+                        <div class="card__title">Истребитель V-19 Поток</div>
+                        <div class="card__image"><img style="width: 200px; height:150px" src="img/V-19_Torrent_TCW.webp"></div>
+                    </div>
+                    <div class="card eightPlayer">
+                        <div class="card__title">Перехватчик RZ-1 A-wing</div>
+                        <div class="card__image"><img style="width: 200px; height:150px" src="img/A-wing2.webp"></div>
+                    </div>
+                    <div class="card ninePlayer">
+                        <div class="card__title">перехватчик Эта-2 типа Актис</div>
+                        <div class="card__image"><img style="width: 200px; height:150px" src="img/perexvat.webp"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <script>
+        let onePlayer = document.querySelector('.onePlayer')
+        let twoPlayer = document.querySelector('.twoPlayer')
+        let threePlayer = document.querySelector('.threePlayer')
+        let fourPlayer = document.querySelector('.fourPlayer')
+        let fivePlayer = document.querySelector('.fivePlayer')
+        let sixPlayer = document.querySelector('.sixPlayer')
+        let sevenPlayer = document.querySelector('.sevenPlayer')
+        let eightPlayer = document.querySelector('.eightPlayer')
+        let ninePlayer = document.querySelector('.ninePlayer')
+        let infoContent = document.querySelector('.infoContent')
+
+        let title      =    document.querySelector('.title')
+        let aside      =    document.querySelector('.aside')
+        let header     =    document.querySelector('.header')
+        let tm         =    document.getElementById('timer')
+        let menu       =    document.querySelector('.menu')
+        let num        =    180
+        let timeEl     =    document.createElement('div')
+        let volume     =    document.createElement('div')
+        let agree      =    document.querySelector('.agree')
+        let heltpoint  =    document.querySelector('.heltpoint')
+        let cardLink   =    document.querySelector('.card__text')
+        let enemies    =    0
+        let canShoot   =    true
+        let proverka   =    0
+
+        let canvas = document.querySelector('.canvas')
+        let ctx = canvas.getContext('2d')
+
+        let music = new Audio('audio/John Williams - The Phantom Menace - Duel of the Fates.mp3')
+        let blaster = new Audio('audio/blaster.mp3')
+
+        menu.addEventListener('click', () => header.classList.toggle('hide'))
+
+        function getRandom(min, max) { return Math.floor(Math.random() * (max - min) + min) }
+
+        class Player {
+            constructor(img, x, y, w = 150, h = 128) {
+                this.img = img
+                this.x = x
+                this.y = y
+                this.w = w
+                this.h = h
+
+                this.speedY = 0
+                this.dy = 0
+                this.accY = 0
+                this.hp = 120
+            }
+            draw(ctx) {
+                ctx.drawImage(this.img, this.x, this.y, this.w, this.h)
+            }
+            move() {
+                this.y += this.dy
+                this.speedY += this.accY
+                if (this.speedY > 2) this.speedY = 2
+                else if (this.speedY < -2) this.speedY = -2
+                this.y += this.speedY
+            }
+            collisions() {
+                if (this.x < enemy.x + enemy.w && this.x + this.w > enemy.x)
+                    if (this.y < enemy.y + enemy.h && this.y + this.h > enemy.y)
+                        return true
+                return false
+            }
+            wall() {
+                if (this.y <= -10) {
+                    this.y = 70
+                    this.hp -= 10
+                }
+                else if (this.y >= canvas.height - 100) {
+                    this.y -= 100
+                    this.hp -= 10
+                }
+            }
+            boom() {
+                this.hp -= 20
+            }
+        }
+
+        class Enemy {
+            constructor(img, x, y, w = 180, h = 180) {
+                this.img = img
+                this.x = x
+                this.y = y
+                this.w = w
+                this.h = h
+                this.hp = 40
+                this.speedX = 7
+            }
+            draw(ctx) {
+                ctx.drawImage(this.img, this.x, this.y, this.w, this.h)
+            }
+            move() {
+                this.x -= this.speedX
+            }
+        }
+
+        class Bullet {
+            constructor(img, y, w=200,h=100) {
+                this.img = img
+                this.x = 100
+                this.y = player.y
+                this.w = w
+                this.h = h
+                this.dx = 5
+            }
+            move() {
+                this.x += this.dx
+            }
+            draw(ctx) {
+                ctx.drawImage(this.img, this.x, this.y, this.w, this.h)
+            }
+        }
+
+        let enemyImg = new Image(150, 150)
+        enemyImg.src = 'img/sid.webp'
+
+        let bulletImg = new Image(200, 100)
+        bulletImg.src = 'img/bullet.png'
+
+        let userImage = document.createElement('img')
+        
+        let enemy = new Enemy(enemyImg, 900, getRandom(20, canvas.height - 150))
+        let bullets = []
+        let player = new Player(userImage, 100, 100)
+
+        function volumePlay() {
+            volume.classList.add('volume')
+            volume.classList.add('volumeOn')
+            infoContent.appendChild(volume)
+            volume.addEventListener('click', function() {
+                volume.classList.toggle('volumeOff')
+                if (volume.classList.contains('volumeOff')) {
+                    music.pause()
+                }
+                volume.classList.toggle('volumeOn')
+                if (volume.classList.contains('volumeOn')) {
+                    music.play()
+                }
+            })
+        }
+
+        function getTimer() {
+            timeEl.classList.add('timer')
+            num -= 1
+            timeEl.innerHTML = num + ' секунд'
+        }
+
+        
+        function collisions() {
+            let e = enemy
+            for (let bul of bullets) {
+                if (Math.abs(bul.x - e.x) < bul.w / 2 + e.w / 2 && Math.abs(bul.y - e.y) < bul.h / 2 + e.h / 2) {
+                    enemy.hp -= 20
+                    enemyImg.src = 'img/sidBoom.webp'
+                    bul.dead = true  
+                    if (enemy.hp <= 0) {
+                        enemyImg.src = 'img/sid.webp'
+                        enemy.hp = 40
+                        enemy.x = 1000
+                        enemy.y = getRandom(20, canvas.height - 150)
+                    }
+                }
+            }
+            bullets = bullets.filter(bul => bul.dead != true)
+            }
+
+        onePlayer.addEventListener('click', function() {
+            proverka = 1
+            music.play()
+            userImage.src = 'img/sokol.webp'
+            aside.style.display = 'none'
+            volumePlay()
+            requestAnimationFrame(game)
+            agree.appendChild(timeEl)
+            setInterval(getTimer, 1000)
+        })
+        twoPlayer.addEventListener('click', function() {
+            proverka = 2
+            music.play()
+            userImage.src = 'img/X-wing.webp'
+            aside.style.display = 'none'
+            volumePlay()
+            requestAnimationFrame(game)
+            agree.appendChild(timeEl)
+            setInterval(getTimer, 1000)
+        })
+        threePlayer.addEventListener('click', function() {
+            proverka = 3
+            music.play()
+            userImage.src = 'img/Y-wing.webp'
+            aside.style.display = 'none'
+            volumePlay()
+            requestAnimationFrame(game)
+            agree.appendChild(timeEl)
+            setInterval(getTimer, 1000)
+        })
+        fourPlayer.addEventListener('click', function() {
+            proverka = 4
+            music.play()
+            userImage.src = 'img/z-95.webp'
+            aside.style.display = 'none'
+            volumePlay()
+            requestAnimationFrame(game)
+            agree.appendChild(timeEl)
+            setInterval(getTimer, 1000)
+        })
+        fivePlayer.addEventListener('click', function() {
+            proverka = 5
+            music.play()
+            userImage.src = 'img/b.webp'
+            aside.style.display = 'none'
+            volumePlay()
+            requestAnimationFrame(game)
+            agree.appendChild(timeEl)
+            setInterval(getTimer, 1000)
+        })
+        sixPlayer.addEventListener('click', function() {
+            proverka = 6
+            music.play()
+            userImage.src = 'img/t-70.webp'
+            aside.style.display = 'none'
+            volumePlay()
+            requestAnimationFrame(game)
+            agree.appendChild(timeEl)
+            setInterval(getTimer, 1000)
+        })
+        sevenPlayer.addEventListener('click', function() {
+            proverka = 7
+            music.play()
+            userImage.src = 'img/V-19_Torrent_TCW.webp'
+            aside.style.display = 'none'
+            volumePlay()
+            requestAnimationFrame(game)
+            agree.appendChild(timeEl)
+            setInterval(getTimer, 1000)
+        })
+        eightPlayer.addEventListener('click', function() {
+            proverka = 8
+            music.play()
+            userImage.src = 'img/A-wing2.webp'
+            aside.style.display = 'none'
+            volumePlay()
+            requestAnimationFrame(game)
+            agree.appendChild(timeEl)
+            setInterval(getTimer, 1000)
+        })
+        ninePlayer.addEventListener('click', function() {
+            proverka = 9
+            music.play()
+            userImage.src = 'img/perexvat.webp'
+            aside.style.display = 'none'
+            volumePlay()
+            requestAnimationFrame(game)
+            agree.appendChild(timeEl)
+            setInterval(getTimer, 1000)
+        })
+
+        function game() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
+            player.draw(ctx)
+            player.move()
+            player.wall()
+            enemy.draw(ctx)
+            enemy.move()
+            heltpoint.innerHTML = player.hp
+
+            for (let bul of bullets) {
+                bul.move()
+                bul.draw(ctx)
+            }
+            collisions()
+
+            if (enemy.x <= enemy.w - 60) {
+                enemyImg.src = 'img/sid.webp'
+                enemy.x = 1000
+                enemy.y = getRandom(150, canvas.height - 150)
+            }
+            if (player.collisions(enemy)) {
+                player.boom()
+                enemyImg.src = 'img/sid.webp'
+                enemy.x = 1000
+                enemy.y = getRandom(150, canvas.height - 150)
+            }
+
+            if (num <= 0 && player.hp > 0) {
+                blaster.pause()
+                music.pause()
+                let win = prompt('Вы выиграли! Хотите играть снова?')
+                if (win === true) window.location.reload()
+                else window.location.href = 'fighter.html'
+            }
+            else if (num <= 0 && player.hp < 0) {
+                blaster.pause()
+                music.pause()
+                heltpoint.innerHTML = 0
+                let fail = prompt('Вы проиграли. Хотите играть снова?')
+                if (fail === true) window.location.reload()
+                else window.location.href = 'fighter.html'
+            }
+            else if (player.hp <= 0) {
+                blaster.pause()
+                music.pause()
+                heltpoint.innerHTML = 0
+                let fail2 = prompt('Вы проиграли. Хотите играть снова?')
+                if (fail2 === true) window.location.reload()
+                else window.location.href = 'fighter.html'
+            }
+
+            requestAnimationFrame(game)
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.keyCode === 38) {
+                player.accY = -0.1
+            }
+            else if (event.keyCode == 40) {
+                player.accY = 0.1
+            } 
+            else if (event.keyCode == 32) {
+                setTimeout(function() {
+                    if (canShoot) {
+                        let bul = new Bullet(bulletImg, 6)
+                        bul.x += bul.dx
+                        bullets.push(bul)
+                        canShoot = false
+                        blaster.play()
+                    }}, 700)
+            }
+        })
+        document.addEventListener('keyup', function(event) {
+            if (event.keyCode == 38) { 
+                player.accY = 0
+            }
+            else if (event.keyCode == 40) {
+                player.accY = 0
+            }
+            else if (event.keyCode == 37) {
+                player.accX = 0
+            }
+            else if (event.keyCode == 39) {
+                player.accX = 0
+            }
+            else if (event.keyCode == 32) {
+                canShoot = true
+            }
+        })
+    </script>
+</body>
+</html>

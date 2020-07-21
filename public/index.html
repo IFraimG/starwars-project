@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/media.css">
+	<link rel="icon" href="img/logo.webp" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
+	<meta name="author" content="Кулагин Александр">
+	<meta name="copyright" content="MyOcean">
+	<meta name="keywords" content="Star Wars, Mandalorec, Мандалорец, Episode IX, Скайуокер. Восход, Звездные войны">
+	<meta name="description" content="Данный сайт содержит информацию о вселенной Звёздных войн.">
+	<!-- FACEBOOK -->
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Star Wars">
+	<meta property="og:description" content="Сайт содержит информацию о вселенной Звездный Войн">
+	<meta property="og:image" content="img/logo.png">
+	<meta property="og:url" content="ПОКАЧТО ЕЕ НЕТ">
+	<meta property="og:site_name" content="Star Wars">
+	<!-- TWITTER -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="Iframe">
+	<meta name="twitter:title" content="Star Wars">
+	<meta name="twitter:description" content="Сайт содержит информацию о вселенной Звездный Войн">
+	<meta name="twitter:image" content="img/logo.png">
+	<title>Star Wars</title>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="container">
+				<div class="header__row">
+					<div class="header__top">
+						<div class="header__logo"><a href="index.html"><img src="img/logo1.webp" alt="logo" title="Звездные войны"></a></div>
+						<div class="header__nav">
+							<ul class="header__links">
+								<li class="header__link one"><p style="user-select: none;" class="link1">Вселенная</p></li>
+								<div class="menu hide">
+									<ul>
+										<li><a href="ceries.html">Сериалы</a></li>
+										<li id="goPlay"><a href="agree.html">Играть</a></li>
+										<li><a href="others.html">Другое</a></li>
+									</ul>
+								</div>
+								<li class="header__link"><a class="link2" href="films.html">Фильмы</a></li>
+								<li class="header__link"><a class="link3" href="chat.html">Чат</a></li>
+								<li class="header__link"><a class="link4" href="login.html">Авторизация</a></li>
+								<li class="header__link"><a class="link5" href="market.html">ЛЕГО StarWars Магазин</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+	</div>
+	<aside class="aside">
+		<div class="container">
+			<div class="slider">
+				<div class="titleSlider"><h1>Смотреть сериал Мандалорец</h1></div>
+				<div class="slider-top">
+					<div class="sliderLeft"></div>
+					<div class="sliderImage img0"></div>
+					<div class="sliderRight"></div>
+				</div>
+				<div class="slider-down">
+					<div class="circle circle0"></div>
+					<div class="circle circle1"></div>
+					<div class="circle circle2"></div>
+					<div class="circle circle3"></div>
+					<div class="circle circle4"></div>
+				</div>
+			</div>
+		</div>
+	</aside>
+	<main class="main">
+		<div class="container">
+			<div class="main__row">
+				<div class="main__text">
+					<h1>Персонажи</h1>
+					<h3 id="allPerson">все персонажи</h3>
+				</div>
+			<div class="cards"></div>
+	</main>
+</div>
+<section class="section">
+	<div class="container"><a class="chatLink" href="chat.html">Перейти к обсуждению</a></div>
+</section>
+<footer class="footer">
+	<div class="container">
+		<div class="footer__row">
+			<a class="agree" href="agree.html">Условия соглашения</a>
+			<a class="github" href="https://github.com/IFraimG"><img src="img/2111432.svg" alt="GitHub" title="GitHub"></a>
+			<h1>Работа сделана Кулагином Александром</h1>
+		</div>
+	</div>
+</footer>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+	let sound = new Audio()
+	sound.src = 'audio/05090.mp3'
+	let sound2 = new Audio()
+	sound2.src = 'audio/05091.mp3'
+	setTimeout( () => sound.play(), 1000 )
+
+	console.log(
+		'%cHello world ! ! !',
+		'color: lightblue; font-size: 36px;' +
+		'background: black; font-family: cursive;' +
+		'text-shadow: 3px 3px 3px white; border: 1px solid #fff;'
+	)
+	
+	let link1 = document.querySelector('.link1')
+	let link2 = document.querySelector('.link2')
+	let link3 = document.querySelector('.link3')
+	let link4 = document.querySelector('.link4')
+
+	let one = document.querySelector('.one')
+	let el = document.createElement('div')
+	let elSlider = document.createElement('div')
+	let slider = document.querySelector('.sliderImage')
+	let sliderLeft = document.querySelector('.sliderLeft')
+	let sliderRight = document.querySelector('.sliderRight')
+	let num = 0
+	let btnRight = document.querySelector('.btnRight')
+	let persons = document.getElementById('allPerson')
+		
+	let circle0 = document.querySelector('.circle0')
+	let circle1 = document.querySelector('.circle1')
+	let circle2 = document.querySelector('.circle2')
+	let circle3 = document.querySelector('.circle3')
+	let circle4 = document.querySelector('.circle4')
+
+	persons.addEventListener('click', () => window.location.href = 'persons.html' )
+
+	// Слайдер ----------------------
+
+	function getSlider() {
+		slider.classList.add('img' + (num + 1))
+		slider.classList.remove('img' + num)
+		num += 1
+		if (num >= 5) {
+			slider.classList.add('img' + 0)
+			slider.classList.remove('img' + num)
+			num = 0
+		}
+	}
+	let timerID = setInterval(getSlider, 4000)
+
+	function stopTimer() { clearInterval(timerID) }
+
+	slider.addEventListener('click', () => {
+		sound2.play()
+		setTimeout(() => window.location.href = 'films.html', 1400)
+	})
+
+	sliderLeft.addEventListener('click', () => {
+		stopTimer()
+		if (num > 0) {
+			slider.classList.add('img' + (num - 1))
+			slider.classList.remove('img' + num)
+			num -= 1
+		}
+		else num = 0
+	})
+
+	sliderRight.addEventListener('click', () => {
+		stopTimer()
+		if (num < 4) {
+			slider.classList.add('img' + (num + 1))
+			slider.classList.remove('img' + num)
+			num += 1
+		}
+		else {
+			slider.classList.add('img' + 0)
+			slider.classList.remove('img' + 4)
+			num = 0
+		}
+	})
+
+	circle0.addEventListener('click', () => {
+		if (num != 0) slider.classList.remove('img' + num)
+		slider.classList.add('img' + 0)
+		num = 0
+		stopTimer()
+	})
+	circle1.addEventListener('click', () => {
+		slider.classList.add('img' + 1)
+		if (num != 1) slider.classList.remove('img' + num)
+		num = 1
+		stopTimer()
+	})
+	circle2.addEventListener('click', () => {
+		slider.classList.add('img' + 2)
+		if (num != 2) slider.classList.remove('img' + num)
+		num = 2
+		stopTimer()
+	})
+	circle3.addEventListener('click', () => {
+		slider.classList.add('img' + 3)
+		if (num != 3) slider.classList.remove('img' + num)
+		num = 3
+		stopTimer()
+	})
+	circle4.addEventListener('click', () => {
+		slider.classList.add('img' + 4)
+		if (num != 4) slider.classList.remove('img' + num)
+		num = 4
+		stopTimer()
+	})
+	let menu = document.querySelector('.menu')
+
+	one.addEventListener('click', () => {
+		sound.play()
+		menu.classList.toggle('hide')
+	 })
+
+	let titleSlider = document.querySelector('.titleSlider')
+
+	slider.addEventListener('mouseover', () => titleSlider.style.visibility = 'visible')
+	slider.addEventListener('mouseout', () => titleSlider.style.visibility = 'hidden')
+
+	// Персонажи ----------------------
+
+	class Person {
+		constructor(item) {
+			this.item = item
+		}
+		push(container) {
+			let card = document.createElement('div')
+			card.className = this.item.classCard
+
+			let cardBlock = document.createElement('div')
+			cardBlock.className = this.item.classBlock
+
+			let cardText = document.createElement('div')
+			cardText.className = 'card__text'
+
+			let cardTitle = document.createElement('div')
+			cardTitle.className = 'card__title'
+			cardTitle.innerHTML = this.item.name
+
+			let cardSubtitle = document.createElement('div')
+			cardSubtitle.className = 'card__subtitle'
+			cardSubtitle.innerHTML = this.item.description
+
+			card.appendChild(cardBlock)
+			cardBlock.appendChild(cardText)
+			cardText.appendChild(cardTitle)
+			cardText.appendChild(cardSubtitle)
+			container.appendChild(card)
+		}
+	}
+
+	axios.get('/psItems').then((response) => {
+		let psItems = response.data
+		let cards = document.querySelector('.cards')
+		for (let psItem of psItems) { new Person(psItem).push(cards) }
+	})
+
+</script>
+</body>
+</html>

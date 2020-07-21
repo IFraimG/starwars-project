@@ -1,0 +1,252 @@
+@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+    input[type='checkbox'],
+    input[type='radio'] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+}
+
+:focus {
+    outline: none;
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    user-select: none;
+}  
+
+body {
+    background: url(../img/fone2.jpg) 50%/cover no-repeat;
+    min-height: 100vh;
+    /* background-color: rgb(214, 214, 214); */
+}
+
+input {
+    padding-left: 10px;
+}
+
+@media (max-width: 1370px) {
+    .poster {
+        position: absolute;
+        left: 0;
+        top: 200px;
+    }
+}
+
+.image {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    cursor: pointer;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.block {
+    border-radius: 15px;
+    margin: 0 400px;
+    width: 600px;
+    height: 700px;
+    background-color: #fff;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    0 12.5px 10px rgba(0, 0, 0, 0.035),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    0 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+.block h1 {
+    margin-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    border-bottom: 2px solid rgb(201, 201, 201);
+}
+
+.poster {
+    position: absolute;
+    right: 30px;
+}
+
+.poster-content {
+    cursor: pointer;
+    width: 350px;
+    height: 500px;
+    border: 3px solid #fff;
+    background: url('../img/poster.webp') 50%/cover;
+    transition: .3s ease-in-out;
+}
+
+.poster-content:hover {
+    border-color: rgb(231, 212, 41);
+}
+
+input {
+    border: 1px solid rgb(150, 145, 145);
+}
+
+input:focus {
+    border: 0;
+}
+
+.name, label {
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+label {
+    margin-top: 30px;
+    color: rgb(121, 118, 118);
+    margin-bottom: 10px;
+}
+
+.name {
+    height:50px;
+    width: 500px;
+    border-radius: 3px;
+    border: 2px solid rgba(0,0,0,.3);
+    font-family: 'Noto Sans', sans-serif;
+    font-size:18px; 
+}
+
+form {
+    margin-bottom: 40px;
+}
+
+.password {
+    display: flex;
+    flex-direction: row;
+}
+
+.pass {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    margin-left: 280px;
+    transition: .3s;
+    user-select: none;
+}
+
+.pass:hover {
+    color: rgb(167, 166, 166);
+}
+
+#check {
+    display: none;
+}
+
+.btn {
+    margin-top: 10px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: rgb(49, 235, 142);
+    color: #fff;
+    font-size: 20px;
+    transition: .3s;
+    cursor: pointer;
+    user-select: none;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.btn:hover {
+    background-color: rgb(28, 139, 84);
+}
+
+.agree {
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 18px;
+}
+
+.agreeLink {
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(80, 126, 196);
+}
+
+.agreeLink span {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.vzyx {
+    width: 100%;
+    height: 50px;
+    background-color:rgb(56, 56, 56);
+    text-align: center;
+    color: #fff;
+    font-family: 'Noto Sans', sans-serif;
+    padding-top: 15px;
+    user-select: none;
+}
+
+.cancel {
+    cursor: pointer;
+    position: absolute;
+    right: 100px;
+    top: 10px;
+    color:#fff;
+    font-family: 'Noto Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 2px solid rgb(97, 8, 8);
+    padding: 5px 20px;
+    background-color: rgb(207, 84, 84);
+}
+
+.cancel:hover {
+    background-color: rgb(121, 9, 9);
+}
+
+.stop {
+    color: rgb(156, 55, 55);
+}
+
+.adition-information {
+    text-align: center;
+    padding-top: 30px;
+    cursor: pointer;
+    color: rgb(30, 141, 214);
+    font-family: 'Noto Sans', sans-serif;
+    transition: .3s ease-in;
+}
+
+.adition-information:hover {
+    color: rgb(81, 185, 255);
+}
+
+.hide {
+    display: none;
+}
+
+.field {
+    padding: 2px;
+    overflow: hidden;
+    margin-left: 50px;
+    border: 2px solid rgba(0,0,0,.3);
+    resize: none;
+    width: 500px;
+    font-size: 16px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+}

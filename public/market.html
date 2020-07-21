@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lego Магазин</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
+    <link rel="icon" href="img/logo.png">
+    <meta name="author" content="Кулагин Александр">
+	<meta name="copyright" content="MyOcean">
+	<meta name="keywords" content="Star Wars, Mandalorec, Мандалорец, Episode IX, Скайуокер. Восход, Звездные войны">
+	<meta name="description" content="Данный сайт содержит информацию о вселенной Звёздных войн.">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/tingle.min.css">
+    <link rel="stylesheet" href="css/market.css">
+    <!-- FACEBOOK -->
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Star Wars">
+	<meta property="og:description" content="Сайт содержит информацию о вселенной Звездный Войн">
+	<meta property="og:image" content="img/logo.png">
+	<meta property="og:url" content="ПОКАЧТО ЕЕ НЕТ">
+	<meta property="og:site_name" content="Star Wars">
+	<!-- TWITTER -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="Iframe">
+	<meta name="twitter:title" content="Star Wars">
+	<meta name="twitter:description" content="Сайт содержит информацию о вселенной Звездный Войн">
+	<meta name="twitter:image" content="img/logo.png">
+</head>
+<body>
+<div class="wrapper">
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <a href="index.html"><img src="img/logo1.png" class="navbar-brand"></img></a>
+        <div class="collapse navbar-collapse" style="font-size: 24px;">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="films.html">Фильмы</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="chat.html">Чат</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="login.html">Авторизация</a>
+              </li>
+            <li>
+                <img src="img/cart.png" class="card" title='Открыть корзину' alt="Корзина">
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <main class="main">
+        <div class="container">
+            <div id="shoppingCart" class="shopping-cart shopping-cart_hidden p-3">
+                <h3 class="text-center mb-3">Корзина покупок</h3>
+                <div class="list-group"></div>
+                <button class="closee btn btn-trigger btn-danger">Закрыть корзину</button>
+            </div>
+            <div id="shoppingItems"><div class="tovar__block"></div></div>
+            <div class="poster"><div class="poster-content"></div></div>
+            <form class="formTovars">
+                <div class="formTitle">
+                    <h1 style="border-bottom: 2px solid rgb(184, 184, 184); padding-bottom: 10px;" class="text-center text-primary font-weight-bold">Добавить товар</h1>
+                </div>
+                <input type="text" style="margin-top: 20px;" class="form-control" id="inputTitle" placeholder="Введите название товара...">
+                <input type="text" class="form-control" placeholder="Добавьте описание товара" id="inputDescription">
+                <div class="sells">
+                    <input type="text" class="sell form-control" placeholder="Кол-во товаров" id="inputQuantity">
+                    <input type="text" class="sell form-control" placeholder="Цена товара ₽" id="inputSell">
+                </div>
+                <button class="btn btn-outline-success btnAdd" id="btnAdd">Добавить</button>
+            </form>
+        </div>
+    </main>
+    <footer class="footer container-fluid">
+        <div class="row footer__row">
+            <div class="col-3">
+                <a class="github" href="https://github.com/IFraimG"><img src="img/2111432.svg" alt="GitHub" title="GitHub"></a>
+            </div>
+            <div class="col-9">
+                <h1>Работа сделана Кулагином Александром</h1>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="tingle.min.js"></script>
+<script>
+    console.log(
+		'%cЯ вам ничего не продам!!',
+		'color: lightblue; font-size: 50px;' +
+		'background: black; font-family: cursive;' +
+		'text-shadow: 3px 3px 3px white; border: 1px solid #fff;'
+	)
+
+    document.addEventListener('DOMContentLoaded', function() { setTimeout(() => {if (isTel === false) modalWindow()}, 3000) })
+
+    let poster = document.querySelector('.poster')
+    poster.addEventListener('click', () => window.location.href = 'films.html')
+
+    // МОДАЛЬНОЕ ОКНО __________________________________
+    let modal = new tingle.modal({
+        footer: true,
+        stickyFooter: false,
+        closeMethods: ['overlay', 'button', 'escape'],
+        closeLabel: "Close",
+        cssClass: ['windowStyle']
+    });
+
+    let inputTovar1 = '<input type="text" class="inputTel1">'
+    let textareaTovar1 = '<input type="text" placeholder="Дополнительно:" class="textField1">'
+
+    function modalWindow() {
+        modal.open()
+        modal.setContent('<h1>Заполните анкету</h1><br><h4>Введите ваш email или номер телефона</h4>' + inputTovar1)
+        modal.getContent(inputTovar1)
+        modal.setFooterContent('')
+        modal.addFooterBtn('Отправить', 'tingle-btn tingle-btn--primary', function() {
+            isTel = true
+            axios.get('/tel', {params: {tel: inputTovar1.value}})
+            modal.close()
+        })
+        modal.addFooterBtn('Закрыть', 'tingle-btn tingle-btn--danger', function() {modal.close()})
+    }
+
+    let login = document.getElementById('sendBtn')
+    let username = document.getElementById('username')
+    let password = document.getElementById('password')
+    let loginForm = document.getElementById('loginForm')
+    let userData = document.getElementById('userData')
+    let leave = document.getElementById('leave')
+    
+    // ДОБАВЛЕНИЕ ТОВАРА ВРУЧНУЮ _____________________
+    class ShopItem {
+        constructor(item) {
+            this.item = item
+        }
+        append(container) {
+            let tovar = document.createElement('div')
+            tovar.className = 'tovar'
+
+            let img = document.createElement('img')
+            img.src = this.item.img
+            img.alt = this.item.alt
+
+            let title = document.createElement('h1')
+            title.className = 'text-title'
+            title.innerHTML = this.item.title
+
+            let description = document.createElement('p')
+            description.innerHTML = this.item.description
+
+            let rows = document.createElement('div')
+            rows.className = 'rows'
+            
+            let price = document.createElement('p')
+            price.className = 'price'
+            price.innerHTML = this.item.price
+
+            let btn = document.createElement('p')
+            btn.className = 'buy btn btn-trigger btn-success'
+            btn.innerHTML = 'Купить'
+
+            let quantity = document.createElement('p')
+            quantity.className = 'quantity'
+            quantity.innerHTML = this.item.quantity
+
+            tovar.appendChild(img)
+            tovar.appendChild(title)
+            tovar.appendChild(description)
+            tovar.appendChild(rows)
+            rows.appendChild(price)
+            rows.appendChild(btn)
+            rows.appendChild(quantity)
+            container.appendChild(tovar)
+        }
+    }
+
+    axios.get('/shopItems').then(function(response) {
+        let shopItems = response.data
+        for (let shopItem of shopItems) {
+            let container = document.querySelector('.tovar__block')
+            new ShopItem(shopItem).append(container)
+        }
+    })
+
+    // ДОБАВЛЕНИЕ ТОВАРА _______________________________
+    let btnAdd = document.getElementById('btnAdd')
+    let inputTitle = document.getElementById('inputTitle')
+    let inputDescription = document.getElementById('inputDescription')
+    let inputQuantity = document.getElementById('inputQuantity')
+    let inputSell = document.getElementById('inputSell')
+
+    btnAdd.addEventListener('click', event => {
+        axios.get('/tovarAdd', {params:{title: inputTitle.value, description: inputDescription.value, 
+            quantity: inputQuantity.value, price: inputSell.value}}).then(response => {
+                let shopItems = response.data
+                let container = document.querySelector('.tovar__block')
+                for (let shopItem of shopItems) new ShopItem(shopItem).append(container)
+        })
+    })
+
+    // КОРЗИНА _______________________________
+    let cart = document.getElementById('shoppingCart')
+    let btnOpen = document.querySelector('.card')
+    let closee = document.querySelector('.closee')
+    let isTel = false
+
+    class CartItem {
+        constructor(title, count) {
+            this.title = title
+            this.count = count
+        }
+    }
+
+    class Cart {
+        constructor(shopList) {
+            this.shopList = shopList
+            this.items = []
+        }
+        addItem(title) {
+            for (let item of this.items) {
+                if (item.title === title) {
+                    item.count++
+                    this.refresh()
+                    return
+                }
+            }
+            this.items.push(new CartItem(title, 1))
+            this.refresh()
+        }
+        refresh() {
+            this.shopList.innerHTML = ''
+            for (let item of this.items) {
+                let listItem = document.createElement('li')
+                listItem.className = 'list-group-item'
+                listItem.innerHTML = item.title + ', ' + item.count + ' товаров в продаже'
+                this.shopList.appendChild(listItem)
+                let btnItem = document.createElement('button')
+                btnItem.className = 'btn btn-outline-primary btnM'
+                btnItem.innerHTML = 'Отменить'
+                listItem.appendChild(btnItem)
+                btnItem.addEventListener('click', function(event) {
+                    item.count = 1
+                    listItem.remove()
+                })
+            }
+            if (!this.items.length) {
+                let listItem = document.createElement('li')
+                listItem.className = 'list-group-item'
+                listItem.innerHTML = 'Вы еще не купили не один товар.'
+                this.shopList.appendChild(listItem)
+            }
+        }
+    }
+    btnOpen.addEventListener('click', function(event) {
+        event.stopPropagation()
+        cart.classList.toggle('shopping-cart_hidden')
+    })
+    closee.addEventListener('click', () => cart.classList.add('shopping-cart_hidden'))
+
+    let shopList = cart.querySelector('.list-group')
+
+    let cartt = new Cart(shopList)
+    cartt.refresh()
+
+    let shoppingItems = document.querySelector('.tovar__block')
+    let btns = shoppingItems.querySelectorAll('.buy')
+    btns.forEach(function(btn) {
+        btn.addEventListener('click', function(event) {
+            if (isTel == false) modalWindow()
+            event.stopPropagation()
+            let cartBody = event.target.parentElement
+            console.log(cartBody)
+            let name = cartBody.querySelector('.text-title')
+            cartt.addItem(name.innerHTML)
+        })
+    })
+    
+</script>
+</body>
+</html>

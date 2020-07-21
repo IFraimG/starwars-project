@@ -1,0 +1,448 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}  
+
+body {
+    background: url('../img/fone.webp') 50%/cover;
+    background-color: rgb(49, 49, 49);
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smooting: antialiased;
+}
+
+button, input, a, img, video {
+    user-select: none;
+}
+
+::-webkit-scrollbar {
+    background-color: #000;
+}
+
+::-moz-scrollbar {
+    background-color: #000;
+}
+
+
+.header {
+    margin-top: 50px;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.header__links {
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+}
+
+.header__link a, p {
+    cursor: pointer;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 50px;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: Verdana;
+    transition: .3s;
+}
+
+.header__link:first-child p {
+    margin-left: 30px;
+}
+
+.header__link:hover a {
+    background-color: rgb(59, 209, 104);
+}
+
+.header__link:hover p {
+    background-color: rgb(59, 209, 104);
+}
+
+.link {
+    display: flex;
+    height: 30px;
+    align-items: center;
+    color: #fff;
+    font-family: Verdana;
+    text-align: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: rgb(43, 233, 185);
+}
+.link1::after {
+    vertical-align: middle;
+    content: url('../img/arrow-down.png');
+}
+
+.aside {
+    margin: 60px 250px;
+}
+
+.slider-top {
+    margin-left: 280px;
+    width: 500px;
+    height: 500px;
+    border: 1px solid #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.sliderLeft {
+    position: absolute;
+    left: 410px;
+    top: 420px;
+    width: 0;
+    height: 0;
+    border-bottom: 80px solid transparent;
+    border-top: 80px solid transparent;
+    border-right: 70px solid rgb(155, 153, 27);
+    transition: .3s ease-in-out;
+}
+
+.sliderLeft:hover {
+    border-right-color: rgb(206, 203, 46);
+}
+
+.sliderRight:hover {
+    border-left-color:rgb(206, 203, 46);
+}
+
+.sliderRight {
+    position: absolute;
+    left: 1070px;
+    top: 420px;
+    width: 0;
+    height: 0;
+    border-bottom: 80px solid transparent;
+    border-top: 80px solid transparent;
+    border-left: 70px solid rgb(155, 153, 27);
+    transition: .3s ease-in-out;
+}
+
+
+.img0 {
+    height: 500px;
+    background-repeat: no-repeat;
+    background: url('img/mandalor.webp') 50%/cover;
+}
+
+.img1 {
+    height: 500px;
+    background-repeat: no-repeat;
+    background: url('../img/art1.webp') 50%/cover;
+}
+
+.img2 {
+    height: 500px;
+    background-repeat: no-repeat;
+    background: url('../img/art5.webp') 50%/cover;
+}
+
+.img3 {
+    height: 500px;
+    background-repeat: no-repeat;
+    background: url('../img/mando.jpg') 50%/cover;
+}
+
+.img4 {
+    height: 500px;
+    background-repeat: no-repeat;
+    background: url('../img/art7.webp') 50%/cover;
+}
+
+.slider-down {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.circle {
+    width: 24px;
+    height: 24px;
+    margin-left: 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid rgb(26, 211, 103);
+    background-color: #000;
+    transition: .3s linear;
+}
+
+.circle:hover {
+    background-color: rgb(26, 211, 103);
+}
+
+.main {
+    margin-top: 100px;
+    height: 700px;
+    margin-bottom: 550px;
+}
+
+.main__row h1 {
+    margin-bottom: 50px;
+    color: #fff;
+    font-family: Verdana;
+    text-transform: uppercase;
+    margin-left: 20px;
+}
+
+.main__row h3 {
+    color: #fff;
+    margin-left: 777px;
+    margin-top: 30px;
+    font-family: Calibri;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.main__text {
+    display: flex;
+    flex-direction: row;
+}
+
+.card {
+    position: relative;
+    box-sizing: border-box;
+    user-select: none;
+    float: left;
+    cursor: pointer;
+    min-width: 23%;
+    height: 340px;
+    margin-left: 20px;
+    margin-bottom: 25px;
+    background-color: rgb(27, 27, 27);
+    transition: .2s;
+}
+
+.card:hover {
+    background-color: #000;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    z-index: -1;
+    background: linear-gradient(rgb(126, 76, 206), yellow);
+    transform: skew(2deg, 2deg);
+    transition: .5s;
+}
+
+.card:hover::before {
+    transform: skew(0)
+}
+
+.card__block {
+    height: 340px;
+    background: url('../img/po.webp');
+}
+.card__block2 {
+    height: 340px;
+    background: url('../img/rei.webp');
+}
+.card__block3 {
+    height: 340px;
+    background: url('../img/fin.webp');
+}
+.card__block4 {
+    height: 340px;
+    background: url('../img/kailoren.webp');
+}
+.card__block5 {
+    height: 340px;
+    background: url('../img/r2d2.webp');
+}
+.card__block6 {
+    height: 340px;
+    background: url('../img/luk2.webp') 50%/cover;
+}
+.card__block7 {
+    height: 340px;
+    background: url('../img/obivan.webp');
+}
+.card__block8 {
+    height: 340px;
+    background: url('../img/enakin.png');
+}
+.card__block9 {
+    height: 340px;
+    background: url('../img/meicvindy.webp');
+}
+.card__block10 {
+    height: 340px;
+    background: url('../img/hansolo.webp') no-repeat;
+}
+.card__block11 {
+    height: 340px;
+    background: url('../img/chubaka.webp') no-repeat;
+}
+.card__block12 {
+    height: 340px;
+    background: url('../img/с3po.webp') no-repeat;
+}
+
+.card__title {
+    padding-left: 20px;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: Verdana;
+    font-weight: bold;
+}
+
+.card__subtitle {
+    padding-left: 20px;
+    color: #fff;
+    font-family: Verdana;
+    font-size: 14px;
+}
+
+.card__text {
+    padding-top: 280px;
+}
+
+.section {
+    height: 100px;
+}
+
+.chatLink {
+    display: flex;
+    padding: 30px 0;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    font-family: Verdana;
+    font-size: 36px;
+    font-weight: bold;
+    border: 5px solid rgb(216, 216, 216);
+    transition: .3s opacity ease-in;
+}
+
+.chatLink:hover {
+    opacity: .70;
+}
+
+.img0 {
+    padding-top: 250px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: url('../img/mandalor.jpg') 50%/cover no-repeat;
+    width: 500px;
+    height: 500px;
+    font-family: 'Ubuntu', Verdana;
+}
+
+.footer {
+    border-top: 1px solid rgb(248, 210, 38);
+    margin-top: 200px;
+    height: 200px;
+    background-color: rgb(24, 24, 24);
+}
+
+.footer__row {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer__row .agree {
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Ubuntu', Verdana;
+}
+
+.footer__row h1 {
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 32px;
+    font-family: 'Ubuntu', Verdana;
+}
+
+.hide {
+    display: none;
+} 
+
+.menu ul {
+    user-select: none;
+    text-align: center;
+    width: 166px;
+    background-color: rgb(197, 155, 15);
+    position: absolute;
+    left: 451px;
+    top: 125px;
+    line-height: 40px;
+    list-style: none;
+    font-weight: bold;
+    font-family: 'Ubuntu', Verdana;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu li {
+    border-bottom: 1px solid #000;
+    cursor: pointer;
+    color: #fff;
+}
+
+.titleSlider {
+    user-select: none;
+    visibility: hidden;
+    cursor: pointer;
+    margin-left: 350px;
+    color: #fff;
+    background-color: #000;
+    font-size: 14px;
+    font-family: 'Ubuntu', Verdana;
+    width: 350px;
+    height: 50px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.github img {
+    width: 64px;
+    height: 64px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    transition: .3s ease-in-out;
+}
+
+.github img:hover {
+    opacity: .80;
+}

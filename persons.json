@@ -1,0 +1,86 @@
+[
+    {
+        "classCard": "card person1",
+        "classBlock": "card__block",
+        "name": "ПО Дэмерон",
+        "description": "Лучший пилот сопротивления"
+    },
+
+    {
+        "classCard": "card person2",
+        "classBlock": "card__block2",
+        "name": "Рей",
+        "description": "Смелая и отважная"
+    },
+
+    {
+        "classCard": "card person10",
+        "classBlock": "card__block10",
+        "name": "Хан Соло",
+        "description": "Капитан 'Сокола Тысячелетия'"
+    },
+
+
+    {
+        "classCard": "card person3",
+        "classBlock": "card__block3",
+        "name": "Финн",
+        "description": "Бывший штурмовик-дезертир"
+    },
+
+    {
+        "classCard": "card person7",
+        "classBlock": "card__block7",
+        "name": "Оби-ван Кеноби",
+        "description": "Мудрый джедай"
+    },
+
+    {
+        "classCard": "card person11",
+        "classBlock": "card__block11",
+        "name": "Чуббака",
+        "description": "Герой-Вуки"
+    },
+
+    {
+        "classCard": "card person5",
+        "classBlock": "card__block5",
+        "name": "r2-d2",
+        "description": "Отважный дроид"
+    },
+
+    {
+        "classCard": "card person6",
+        "classBlock": "card__block6",
+        "name": "Люк Скайуокер",
+        "description": "Легендарный джедай"
+    },
+
+    {
+        "classCard": "card person8",
+        "classBlock": "card__block8",
+        "name": "Энакин Скайуокер",
+        "description": "Избранный"
+    },
+
+    {
+        "classCard": "card person12",
+        "classBlock": "card__block12",
+        "name": "C-3PO",
+        "description": "Нервный протокольный дроид"
+    },
+
+    {
+        "classCard": "card person4",
+        "classBlock": "card__block4",
+        "name": "Кайло Рен",
+        "description": "Один из лидеров первого ордена"
+    },
+
+    {
+        "classCard": "card person9",
+        "classBlock": "card__block9",
+        "name": "Мейс Винду",
+        "description": "Могучий Мастер-джедай"
+    }
+]

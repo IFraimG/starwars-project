@@ -1,0 +1,245 @@
+@media (max-width: 1150px) {
+    .header__link a {
+        font-size: 16px;
+    }
+    .slider-top {
+        margin-left: 0;
+    }
+}
+@media (max-width: 1140px) {
+    .sliderLeft {
+        left: 150px;
+    }
+    .sliderRight {
+        left: 800px;
+    }
+    .titleSlider {
+        margin-left: 80px;
+    }
+}
+
+@media (max-width: 1030px) {
+    .header__logo img {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 900px) {
+    .card {
+        display: flex;
+        justify-content: center;
+    }
+    .card__block {background: url('../img/po.webp') 50%/cover; overflow: hidden;}
+    .card__block2 {background: url('../img/rei.webp') 50%/cover;  overflow: hidden;}
+    .card__block3 {background: url('../img/fin.webp') 50%/cover;  overflow: hidden;}
+    .card__block4 {background: url('../img/kailoren.webp') 50%/cover;  overflow: hidden;}
+    .card__block5 {background: url('../img/r2d2.webp') 50%/cover;  overflow: hidden;}
+    .card__block6 {background: url('../img/luk2.webp') 50%/cover;  overflow: hidden;}
+    .card__block7 {background: url('../img/obivan.webp') 50%/cover;  overflow: hidden;}
+    .card__block8 {background: url('../img/dartmol.webp') 50%/cover;  overflow: hidden;}
+    .card__block9 {background: url('../img/meicvindy.webp') 50%/cover;  overflow: hidden;}
+    .card__block10 {background: url('../img/hansolo.webp') 50%/cover no-repeat;  overflow: hidden;}
+    .card__block11 {background: url('../img/chubaka.webp') 50%/cover no-repeat;  overflow: hidden;}
+    .card__block12 {background: url('../img/с3po.webp') 50%/cover no-repeat;  overflow: hidden;}
+}
+
+@media (max-width: 788px) {
+    .header__link a {
+        white-space: nowrap;
+    }
+    .header__link p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 764px) {
+    .main__row {
+        margin-left: 70px;
+    }
+    .aside {
+        margin-left: 120px;
+    }
+
+    .slider-down {
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 684px) {
+    .header__link a {
+        font-size: 14px;
+    }
+    .main__row {
+        margin-left: 30px;
+    }
+    .sliderLeft {
+        border-bottom: 60px solid transparent;
+        border-top: 60px solid transparent;
+        border-right: 50px solid rgb(155, 153, 27);
+    }
+    .sliderRight {
+        border-bottom: 60px solid transparent;
+        border-top: 60px solid transparent;
+        border-left: 50px solid rgb(155, 153, 27);
+    }
+    .link1::after {
+        content: '';
+    }
+}
+
+@media (max-width: 800px) {
+    .card {
+        min-width: 28%;
+    }
+    .main__row {
+        margin-left: 0;
+    }
+
+    .chatLink {
+        max-width: 600px;
+        margin-left: 100px;
+    }
+}
+
+@media (max-width: 632px) {
+    .aside {
+        margin-left: 100px;
+    }
+    .card__block6 {
+        overflow: hidden;
+        background: url('../img/luk2.png') 60%/cover;
+    }
+    .card__title, .card__subtitle {
+        padding-left: 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .chatLink {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .circle {
+        min-width: 24px;
+        min-height: 24px;
+    }
+    .slider {
+        padding-right: 50px;
+    }
+    .slider-down {
+        margin-left: 170px;
+    }
+    .aside {
+        margin-left: 150px;
+    }
+    .sliderLeft {
+        left: 50px;
+    }
+    .sliderRight {
+        left: 670px;
+    }
+}
+
+@media (max-width: 1112px) {
+    .card {
+        max-width: 15%;
+    }
+}
+
+@media (max-width: 991px) {
+    .card__text {
+        padding-top: 200px;
+
+    }
+}
+
+@media (max-width: 928px) {
+    .header__link a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 999px) {
+    .section {
+        padding-top: 300px;
+    }
+
+    .main__row {
+        margin-left: 200px;
+    }
+}
+@media (max-width: 1407px) {
+    .main__row h3 {
+        margin-left: 30px;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 574px) {
+    .aside {
+        margin-left: 120px;
+    }
+    .slider-down {
+        margin-left: 220px;
+    }
+    .header__links {
+        margin-left: 120px;
+    }
+    .header__link a {
+        font-size: 12px;
+    }
+    .header__logo img {
+        margin-left: 250px;
+    }
+    .main__row h3 {
+        white-space: nowrap;
+    }
+    .cards {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+    }
+    .card {
+        display: flex;
+        min-width: 28%;
+        flex: 1 0 300px;
+    }
+}
+
+@media (max-width: 518px) {
+    .chatLink {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 507px) {
+    .section {
+        min-width: 600px;
+    }
+}
+
+@media (max-width: 430px) {
+    .aside {
+        margin-left: 100px;
+    }
+    .slider-down {
+        margin-left: 230px;
+    }
+    .header__links {
+        margin-left: 160px;
+    }
+    .footer__row h1, .footer__row a {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 375px) {
+    .header__links {
+        margin-left: 430px;
+    }
+    .header__logo img {
+        margin-left: 460px;
+    }
+} 

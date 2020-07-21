@@ -1,0 +1,78 @@
+.wrapper {
+    min-height: 100vh;
+    background: url('../img/fone.jpg') 50%/cover no-repeat;
+}
+
+.inputName {
+    height: 60px;
+    font-size: 30px;
+    border-width: 5px;
+    font-weight: bold;
+}
+
+.inputName::placeholder {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.inputText {
+    font-size: 30px;
+    resize: none;
+    border-width: 5px;
+}
+
+.inputText::placeholder {
+    font-size: 16px;
+}
+
+.forms {
+    padding-top: 70px;
+}
+
+.send {
+    height: 60px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+
+.text-field {
+    margin-top: 20px;
+    resize: none;
+    width: 700px;
+    background-color: #fff;
+    line-height: 25px;
+    color: rgb(158, 74, 17);
+    font-size: 16px;
+    font-family: 'Ubuntu', Verdana;
+}
+
+.alert {
+    position: fixed;
+    top: 300px;
+    right: 100px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: 'Ubuntu', Verdana;
+}
+
+
+.fields {
+    display: flex;
+    align-items: center;
+}
+
+.btnDown {
+    border-radius: 20px;
+    height: 60px;
+    width: 150px;
+    font-size: 28px;
+    font-weight: bold;
+}
