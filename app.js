@@ -8,18 +8,40 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 let messages = []
-let komments = []
+let comments = []
 let clients = []
 let cart = []
 let figthers = []
 let tokens = []
 let tels = []
 let tovars = []
+let users = []
 
 class Message {
     constructor(user, text) {
         this.user = user
         this.text = text
+    }
+}
+
+class Tovar {
+    constructor(img, title, description, price, quantity) {
+        this.img = img
+        this.title = title
+        this.description = description
+        this.price = price + '₽'
+        this.quantity = quantity + ' товаров в продаже'
+    }
+}
+
+class User {
+    constructor(username, password, email, myDate, country, field) {
+        this.username = username
+        this.password = password
+        this.email = email
+        this.myDate = myDate
+        this.country = country
+        this.field = field
     }
 }
 
@@ -37,33 +59,21 @@ app.get('/send', function(req, res) {
 app.get('/sendText', function(req, res) {
     let user = req.query.user
     let text = req.query.text
-    let komment = new Message(user, text)
-    komments.push(komment)
-    for(client of clients) { client.send(JSON.stringify(komment)) }
+    let comment = new Message(user, text)
+    comments.push(comment)
+    for(client of clients) { client.send(JSON.stringify(comment)) }
     res.send('okk')
 })
 
 app.get('/recieve', function(req, res) { res.send(messages) })
-app.get('/komments', function(req, res) { res.send(komments) })
+app.get('/komments', function(req, res) { res.send(comments) })
 
 app.get('/tel', function(req, res) {
     let tel = req.query.tel
     tels.push(tel)
     res.send(tel)
 })
-class User {
-    constructor(username, password, email, myDate, country, field) {
-        this.username = username
-        this.password = password
-        this.email = email
-        this.myDate = myDate
-        this.country = country
-        this.field = field
-    }
-}
 
-let users = []
-users.push(new User('abc', '123'))
 
 // СОХРАНЕНИЕ ПОЛЬЗОВАТЕЛЕЙ
 fs.readFile('users.json', function(err, data) {
@@ -102,16 +112,6 @@ app.get('/psItems', function(req, res) {
         res.send(psItems)
     })
 })
-
-class Tovar {
-    constructor(img, title, description, price, quantity) {
-        this.img = img
-        this.title = title
-        this.description = description
-        this.price = price + '₽'
-        this.quantity = quantity + ' товаров в продаже'
-    }
-}
 
 app.get('/tovarAdd', function(req, res) {
     let title = req.query.title

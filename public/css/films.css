@@ -20,9 +20,10 @@ body {
 }
 
 .container {
-    max-width: 1200px;
-    width: 100%;
+    width: 1170px;
+    max-width: 100%;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 .header__top {
@@ -112,10 +113,16 @@ body {
     height: 800px;
 }
 
+.slider {
+    width: 1170px;
+    max-width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+}
+
 .sliderContent {
     cursor: pointer;
-    width: 1280px;
-    margin-left: 150px;
+    width: 100%;
     height: 720px;
     border: 2px solid #000;
     cursor: pointer;
@@ -212,12 +219,11 @@ video {
 
 .aside {
     height: 700px;
-    margin-left: 150px;
 }
 
 .aside__row {
     display: flex;
-    flex-direction: row;
+    width: 100%;
 }
 
 .aside__left {
@@ -227,7 +233,6 @@ video {
 }
 
 .aside__block {
-    width: 1000px;
     height: 700px;
     padding: 20px;
     background-color: rgb(46, 46, 46);
@@ -241,7 +246,6 @@ video {
 }
 
 .aside__block p {
-    width: 900px;
     margin-top: 20px;
     text-transform: lowercase;
     color: rgba(199, 199, 199, 0.6);
@@ -253,11 +257,12 @@ video {
 .chat {
     margin-top: 150px;
     height: 900px;
+    width: 100%;
 }
 
 .inputName {
     height: 60px;
-    width: 300px;
+    /* width: 300px; */
     font-size: 32px;
     padding-left: 3px;
     font-weight: bold;
@@ -276,7 +281,7 @@ video {
 .inputMessage {
     margin-left: 30px;
     height: 60px;
-    width: 600px;
+    /* width: 600px; */
     font-size: 32px;
     padding-left: 3px;
     font-weight: bold;
@@ -291,9 +296,9 @@ video {
 }
 
 .chat__top {
+    width: 100%;
     margin-top: 50px;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
@@ -328,8 +333,7 @@ video {
 .field {
     resize: none;
     margin-top: 50px;
-    margin-left: 55px;
-    width: 1070px;
+    width: 100%;
     color: rgb(224, 194, 24);
     font-size: 18px;
     padding-left: 20px;
@@ -364,7 +368,6 @@ video {
 }
 
 .text-description {
-    width: 1000px;
     overflow: hidden;
     white-space: nowrap;
 }
